@@ -1,0 +1,9 @@
+<!-- Vulnerable to XSS -->
+<div>
+    <p>User Comments: </p>
+    <p id="userComment"></p>
+</div>
+<script>
+    document.getElementById('userComment').innerHTML = location.search.substr(1);
+</script>
+<!-- A malicious user could craft a URL that injects JavaScript code into the page. -->
